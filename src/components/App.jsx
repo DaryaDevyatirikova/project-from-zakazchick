@@ -7,7 +7,7 @@ import SignUpPage from './pages/SingUpPage';
 import LoginPage from './pages/LoginPage';
 import FavouritePage from './pages/FavouritePage';
 
-export default function App({ recipeList }) {
+export default function App({ recipeList,favouriteList }) {
   return (
     <>
       <Navbar />
@@ -16,7 +16,7 @@ export default function App({ recipeList }) {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/:recipeId" element={<RecipePage />} />
-        <Route path="/favourite" element={<FavouritePage />} />
+        <Route path="/favourite" element={<FavouritePage favouriteList={favouriteList} />} />
       </Routes>
     </>
   );

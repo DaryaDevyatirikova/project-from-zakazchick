@@ -4,7 +4,7 @@ import SortABS from '../ui/icons/SortABS';
 import SortDESC from '../ui/icons/SortDESC';
 import Like from '../ui/icons/Like';
 
-export default function FavouritePage() {
+export default function FavouritePage({ favouriteList }) {
   return (
     <>
       <div className="hstack gap-3">
@@ -24,22 +24,21 @@ export default function FavouritePage() {
           </button>
         </div>
       </div>
-      <div className="card" style={{ width: '18rem' }}>
-        <img src="..." className="card-img-top" alt="..." />
-        <div>
-          <Like />
+      {favouriteList?.map((card) => (
+        <div className="card" style={{ width: '18rem' }}>
+          <img src={card.Recipe.image} className="card-img-top" alt="..." />
+          <div>
+            <Like />
+          </div>
+          <div className="card-body">
+            <h5 className="card-title">{card.Recipe.recipename}</h5>
+            <p className="card-text">{card.Recipe.description}</p>
+            <a href="#" className="btn btn-primary">
+              Go somewhere
+            </a>
+          </div>
         </div>
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the bulk of the card's
-            content.
-          </p>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
-          </a>
-        </div>
-      </div>
+      ))}
     </>
   );
 }
