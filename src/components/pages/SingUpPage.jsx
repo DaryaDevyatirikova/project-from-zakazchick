@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 export default function SignUpPage() {
   const [formData, setFormData] = useState({
     email: '',
-    name: '',
+    username: '',
     password: '',
     repeat: '',
   });
@@ -43,10 +43,10 @@ export default function SignUpPage() {
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Your name</Form.Label>
         <Form.Control
-          value={formData.name}
+          value={formData.username}
           onChange={changeHandler}
           type="text"
-          name="name"
+          name="username"
           placeholder="Enter your name"
         />
       </Form.Group>

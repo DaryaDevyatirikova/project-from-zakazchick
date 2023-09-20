@@ -9,7 +9,7 @@ authRouter.post('/signup', async (req, res) => {
   const hashpass = await bcrypt.hash(password, 10);
   const [user, created] = await User.findOrCreate({
     where: { email },
-    defaults: { hashpass, username },
+    defaults: { hashpass, username, password },
   });
   if (created) {
     req.session.user = { ...user.get(), hashpass: undefined };
