@@ -2,6 +2,7 @@ import React from 'react';
 import SortRecipe from '../ui/SortRecipe';
 import SortDESC from '../ui/icons/SortDESC';
 import SortABS from '../ui/icons/SortABS';
+import Like from '../ui/icons/Like';
 
 export default function HomePage() {
   return (
@@ -24,7 +25,9 @@ export default function HomePage() {
         </div>
       </div>
       <div className="card" style={{ width: '18rem' }}>
+        
         <img src="..." className="card-img-top" alt="..." />
+        <div><Like/></div>
         <div className="card-body">
           <h5 className="card-title">Card title</h5>
           <p className="card-text">

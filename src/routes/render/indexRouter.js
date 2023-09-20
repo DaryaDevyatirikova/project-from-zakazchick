@@ -12,4 +12,7 @@ router.get('/signup', authCheck(false), (req, res) => res.render('Layout'));
 
 router.get('/login', authCheck(false), (req, res) => res.render('Layout'));
 
+router.get('/favourite',  (req, res) => res.render('Layout'));
+
+
 export default router;

@@ -4,9 +4,13 @@ import axios from 'axios';
 export default function Navbar() {
   return (
     <ul className="nav nav-underline">
-      <li className="nav-item">Кулинарная книга</li>
       <li className="nav-item">
-        <a className="nav-link" href="#">
+        <a className="nav-link" href="/">
+          Кулинарная книга
+        </a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="/favourite">
           Избранное
         </a>
       </li>
