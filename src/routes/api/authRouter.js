@@ -1,14 +1,15 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
+import { User } from '../../../db/models';
 
 const authRouter = express.Router();
 
 authRouter.post('/signup', async (req, res) => {
-  const { email, password, name } = req.body;
+  const { email, password, username } = req.body;
   const hashpass = await bcrypt.hash(password, 10);
   const [user, created] = await User.findOrCreate({
     where: { email },
-    defaults: { hashpass, name },
+    defaults: { hashpass, username },
   });
   if (created) {
     req.session.user = { ...user.get(), hashpass: undefined };

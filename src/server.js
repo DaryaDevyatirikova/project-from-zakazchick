@@ -4,9 +4,10 @@ import session from 'express-session';
 import store from 'session-file-store';
 import path from 'path';
 import jsxRender from './utils/jsxRender';
-import indexRouter from './routes/indexRouter';
-import apiRouter from './routes/apiRouter';
+import indexRouter from './routes/render/indexRouter';
+import apiRouter from './routes/api/apiRouter';
 import resLocals from './middlewares/resLocals';
+import authRouter from './routes/api/authRouter';
 
 require('dotenv').config();
 
@@ -39,5 +40,6 @@ app.use(resLocals);
 
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
+app.use('/api/auth', authRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));
