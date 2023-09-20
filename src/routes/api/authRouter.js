@@ -9,7 +9,7 @@ authRouter.post('/signup', async (req, res) => {
   const hashpass = await bcrypt.hash(password, 10);
   const [user, created] = await User.findOrCreate({
     where: { email },
-    defaults: { hashpass, username, password },
+    defaults: { hashpass, username },
   });
   if (created) {
     req.session.user = { ...user.get(), hashpass: undefined };
@@ -25,6 +25,7 @@ authRouter.post('/login', async (req, res) => {
     return res.status(400).json({ message: 'Email not found' });
   }
   const isCorrect = await bcrypt.compare(password, user.hashpass);
+  console.log(isCorrect)
   if (!isCorrect) {
     return res.status(400).json({ message: 'Incorrect password' });
   }

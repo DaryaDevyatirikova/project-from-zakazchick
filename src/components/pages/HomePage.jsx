@@ -4,7 +4,7 @@ import SortDESC from '../ui/icons/SortDESC';
 import SortABS from '../ui/icons/SortABS';
 import Like from '../ui/icons/Like';
 
-export default function HomePage() {
+export default function HomePage({recipeList}) {
   return (
     <>
       <div className="hstack gap-3">
@@ -24,21 +24,21 @@ export default function HomePage() {
           </button>
         </div>
       </div>
-      <div className="card" style={{ width: '18rem' }}>
-        
-        <img src="..." className="card-img-top" alt="..." />
-        <div><Like/></div>
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the bulk of the card's
-            content.
-          </p>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
-          </a>
+      {recipeList?.map((card) => (
+        <div className="card" style={{ width: '18rem' }}>
+          <img src={card.image} className="card-img-top" alt="..." />
+          <div>
+            <Like />
+          </div>
+          <div className="card-body">
+            <h5 className="card-title">{card.recipename}</h5>
+            <p className="card-text">{card.description}</p>
+            <a href="#" className="btn btn-primary">
+              Go somewhere
+            </a>
+          </div>
         </div>
-      </div>
+      ))}
     </>
   );
 }

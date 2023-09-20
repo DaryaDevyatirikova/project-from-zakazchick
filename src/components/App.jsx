@@ -7,17 +7,16 @@ import SignUpPage from './pages/SingUpPage';
 import LoginPage from './pages/LoginPage';
 import FavouritePage from './pages/FavouritePage';
 
-export default function App({ hello }) {
+export default function App({ recipeList }) {
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage recipeList={recipeList} />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/:recipeId" element={<RecipePage />} />
         <Route path="/favourite" element={<FavouritePage />} />
-
       </Routes>
     </>
   );
