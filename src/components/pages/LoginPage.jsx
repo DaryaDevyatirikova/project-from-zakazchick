@@ -40,11 +40,6 @@ export default function LoginPage() {
             </Button>
           </Col>
         </Row>
-        <Row className="justify-content-center mt-3 mb-3 text-center">
-          <Col>
-            <Nav.Link href="/signup">Don't have an account? Sign up</Nav.Link>
-          </Col>
-        </Row>
       </Form>
       <Modal show={!!err} onHide={handleClose}>
         <Modal.Header closeButton>
