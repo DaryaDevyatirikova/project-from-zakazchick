@@ -1,6 +1,17 @@
-/** @type {import('sequelize-cli').Migration} */
+
+
+
 module.exports = {
   async up(queryInterface, Sequelize) {
+    // const imageResponse = await axios.get(
+    //   'https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg/preview',
+    // );
+    // const images = imageResponse.data.map((item) => ({
+    //   url: item.url,
+    // }));
+
+    await queryInterface.bulkInsert('Images', images, {});
+
     await queryInterface.bulkInsert(
       'Recipes',
       [
@@ -22,11 +33,7 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    await queryInterface.bulkDelete('Recipes', null, {});
+    await queryInterface.bulkDelete('Images', null, {});
   },
 };
