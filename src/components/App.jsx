@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage';
 import FavouritePage from './pages/FavouritePage';
 import NewNavbar from './ui/NewNavBar';
 
+
 export default function App({ recipeList,favouriteList, user, recipeCard }) {
   return (
     <>

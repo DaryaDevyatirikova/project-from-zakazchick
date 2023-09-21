@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import SortRecipe from '../ui/SortRecipe';
 import SortDESC from '../ui/icons/SortDESC';
 import SortABS from '../ui/icons/SortABS';
-import Like from '../ui/icons/Like';
+import RecipeCard from '../ui/RecipeCard';
 
-export default function HomePage({recipeList}) {
+export default function HomePage() {
+  const [recipeList, setRecipeList] = useState(null);
+  
+  useEffect(() => {
+    axios('/api').then(({data}) => setRecipeList(data));
+  }, []);
+
   return (
     <>
     <div className='header' >
@@ -34,19 +41,7 @@ export default function HomePage({recipeList}) {
       </div>
       <div className='Allrecipes'>
       {recipeList?.map((card) => (
-        <div className="card" style={{ width: '18rem' }}>
-          <img src={card.image} className="card-img-top" alt="..." />
-          <div>
-            <Like />
-          </div>
-          <div className="card-body">
-            <h5 className="card-title">{card.recipename}</h5>
-            <p className="card-text">{card.description}</p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
-          </div>
-        </div>
+        <RecipeCard card={card} />
       ))}
       </div>
 
