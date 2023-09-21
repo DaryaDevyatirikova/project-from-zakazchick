@@ -7,6 +7,14 @@ import Like from '../ui/icons/Like';
 export default function HomePage({recipeList}) {
   return (
     <>
+    <div className='header' >
+      <div>
+        <h1 className='title'>Your CookingBook</h1>
+      </div>
+       </div>
+       <div className='description'>
+       Забудьте о скучных обедах и ужинах – давайте создадим кулинарное приключение, которое будет запоминаться на всю жизнь. Присоединяйтесь к нам и давайте вместе покорять мир вкуса!
+       </div>
       <div className="hstack gap-3">
         <div className="p-2">
           Сортировка по:
@@ -24,6 +32,7 @@ export default function HomePage({recipeList}) {
           </button>
         </div>
       </div>
+      <div className='Allrecipes'>
       {recipeList?.map((card) => (
         <div className="card" style={{ width: '18rem' }}>
           <img src={card.image} className="card-img-top" alt="..." />
@@ -39,6 +48,8 @@ export default function HomePage({recipeList}) {
           </div>
         </div>
       ))}
+      </div>
+
     </>
   );
 }

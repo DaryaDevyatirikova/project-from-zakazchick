@@ -1,0 +1,33 @@
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width :100vw;
+    height: 480px;
+    background-image: url('dish.png');
+  background-repeat: repeat;
+  background-size: 70px 70px; 
+}
+.title{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+color: aliceblue;
+font-family: 'IBM Plex Mono', monospace;
+font-family: 'Oswald', sans-serif;
+font-size: 200px
+}
+
+.description{
+   color: aliceblue;
+   font-family: 'IBM Plex Mono', monospace;
+   font-family: 'Oswald', sans-serif;
+   font-size: 50px;
+   margin: 120px;
+}
+
+.Allrecipes{
+  display: flex;
+  justify-content: space-around;
+
+}
