@@ -7,7 +7,7 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { grey } from '@mui/material/colors';
 
-export default function Foodpage() {
+export default function RecipePage({recipe}) {
   return (
     <Card sx={{
       maxWidth: 1000,
@@ -23,7 +23,7 @@ export default function Foodpage() {
         <CardMedia
           component="img"
           height="300"
-          image="burger.jpeg"
+          image={recipe.image}
           alt="green iguana"
         />
         <CardContent sx={{
@@ -31,12 +31,15 @@ export default function Foodpage() {
         }}
         >
           <Typography gutterBottom variant="h5" component="div">
-          Бургер, время приготовления:1:30
+          {recipe.recipename}
 
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Очень вкусно Очень вкусно Очень вкусно Очень вкусно Очень вкусно 
-            Очень вкусно Очень вкусно Очень вкусно
+          {`${recipe.description} \n Время готовки: ${recipe.time}`}
+          </Typography>
+          <br />
+          <Typography variant="body2" color="text.secondary">
+          {`Время готовки: ${recipe.time}`}
           </Typography>
           <br />
           <Typography variant="body2" color="text.secondary">

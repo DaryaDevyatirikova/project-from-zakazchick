@@ -71,15 +71,11 @@ router.get('/favourite', authCheck(true), async (req, res) => {
 //   }
 });
 
-router.get('/:id', async (req, res) => {
-  try {
-    const recipeCard = await Recipe.findByPk(req.params.id);
-    const initState = { recipeCard };
-    res.render('Layout', initState);
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).send('Server error');
-  }
+router.get('/rec/:recipeId', async (req, res) => {
+  const recipeCard = await Recipe.findByPk(req.params.recipeId);
+  const initState = { recipeCard };
+  res.render('Layout', initState);
+
 });
 
 export default router;

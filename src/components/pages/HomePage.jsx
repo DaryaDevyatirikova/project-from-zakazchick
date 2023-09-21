@@ -14,6 +14,14 @@ export default function HomePage() {
 
   return (
     <>
+    <div className='header' >
+      <div>
+        <h1 className='title'>Your CookingBook</h1>
+      </div>
+       </div>
+       <div className='description'>
+       Забудьте о скучных обедах и ужинах – давайте создадим кулинарное приключение, которое будет запоминаться на всю жизнь. Присоединяйтесь к нам и давайте вместе покорять мир вкуса!
+       </div>
       <div className="hstack gap-3">
         <div className="p-2">
           Сортировка по:
@@ -31,9 +39,12 @@ export default function HomePage() {
           </button>
         </div>
       </div>
+      <div className='Allrecipes'>
       {recipeList?.map((card) => (
         <RecipeCard card={card} />
       ))}
+      </div>
+
     </>
   );
 }
