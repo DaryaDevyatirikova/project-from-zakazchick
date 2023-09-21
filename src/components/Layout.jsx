@@ -9,6 +9,10 @@ export default function Layout({ initState }) {
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Oswald:wght@500&display=swap" rel="stylesheet"/>
         <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
@@ -25,7 +29,9 @@ export default function Layout({ initState }) {
         />
         <title>Кулинарная книга</title>
       </head>
-      <body>
+      <body style={{
+        backgroundColor: '#E01A4F',
+      }}>
         <div id="root">
           <StaticRouter location={initState.path}>
             <App {...initState} />
