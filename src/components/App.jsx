@@ -7,7 +7,7 @@ import SignUpPage from './pages/SingUpPage';
 import LoginPage from './pages/LoginPage';
 import FavouritePage from './pages/FavouritePage';
 
-export default function App({ recipeList,favouriteList }) {
+export default function App({ recipeList, favouriteList }) {
   return (
     <>
       <Navbar />
