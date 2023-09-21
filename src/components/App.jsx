@@ -13,7 +13,7 @@ export default function App({ recipeList,favouriteList, user, recipeCard }) {
   return (
     <>
       <NewNavbar/>
-      {/* <Navbar user = {user }/> */}
+      <Navbar user = {user }/>
       <Routes>
         <Route path="/" element={<HomePage recipeList={recipeList} />} />
         <Route path="/signup" element={<SignUpPage />} />
