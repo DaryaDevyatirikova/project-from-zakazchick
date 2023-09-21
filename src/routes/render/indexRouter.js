@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
 
   const initState = { recipeList };
   res.render('Layout', initState);
-=======
+
 //   try {
 //     const recipeList = await Recipe.findAll();
 //     const imageResponse = await axios.get('/images/media/meals/llcbn01574260722.jpg/preview');
@@ -57,7 +57,7 @@ router.get('/favourite', authCheck(true), async (req, res) => {
   const initState = { favouriteList };
   console.log('-----------', favouriteList);
   res.render('Layout', initState);
-=======
+
 //   try {
 //     const data = await Favourite.findAll({
 //       where: { userId: req.session?.user.id },
