@@ -5,9 +5,9 @@ import SortDESC from '../ui/icons/SortDESC';
 import SortABS from '../ui/icons/SortABS';
 import RecipeCard from '../ui/RecipeCard';
 
-export default function HomePage() {
+export default function HomePage({user}) {
   const [recipeList, setRecipeList] = useState(null);
-
+  
   useEffect(() => {
     axios('/api').then(({ data }) => setRecipeList(data));
   }, []);
@@ -19,8 +19,9 @@ export default function HomePage() {
     if (e.target.value === '1') {
       setRecipeList((prev) => [...prev.sort((a, b) => a.time - b.time)]);
     }
-    // setRecipeList(recipeList.sort((a,b)=>a.time-b.time))
+ 
   };
+ 
 
   return (
     <>
@@ -52,7 +53,7 @@ export default function HomePage() {
       </div>
       <div className="Allrecipes">
         {recipeList?.map((card) => (
-          <RecipeCard card={card} />
+          <RecipeCard card={card} user={user} />
         ))}
       </div>
     </>
