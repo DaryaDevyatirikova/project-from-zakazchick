@@ -1,10 +1,13 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 
-export default function Like() {
-  const [liked, setLiked] = useState(false);
-
-  const clickHandler = () => {
+export default function Like({ cardId, card}) {
+  
+  const [liked, setLiked] = useState(card.fav?.length);
+  const clickHandler = async () => {
+   await axios.post(`/api/${cardId}`);
     setLiked((prev) => !prev);
+    console.log(liked);
   };
   return (
     <svg
