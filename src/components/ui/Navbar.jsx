@@ -3,18 +3,6 @@ import axios from 'axios';
 
 export default function Navbar({ user }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // useEffect(() => {
-  //   axios('/api/auth/login')
-  //     .then((response) => {
-  //       if (response.status === 200) {
-  //         setIsLoggedIn(true);
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
   return (
     <ul className="nav nav-underline">
       <li className="nav-item">
