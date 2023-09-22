@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       recipename: DataTypes.STRING,
       image: DataTypes.STRING,
       description: DataTypes.TEXT,
-      time: DataTypes.INTEGER,
+      time: DataTypes.TEXT,
     },
     {
       sequelize,
