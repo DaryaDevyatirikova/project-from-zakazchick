@@ -32,19 +32,20 @@ export default function FavouritePage() {
     <>
       <div className="hstack gap-3">
         <div className="p-2">
-          Сортировка по:
           <SortRecipe sortHandler={sortHandler}/>
-        </div>
-        <div className="p-2 ms-auto">
           <button type="button">
             <SortABS clickHandler={clickHandler}/>
           </button>
-        </div>
-        <div className="vr" />
-        <div className="p-2">
           <button type="button">
             <SortDESC clickHandler={clickHandler}/>
           </button>
+          
+        </div>
+        <div className="p-2 ms-auto">
+
+        </div>
+        <div className="vr" />
+        <div className="p-2">
         </div>
       </div>
       <div className='favlist'>
