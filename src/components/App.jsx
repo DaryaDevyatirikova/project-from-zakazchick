@@ -13,8 +13,8 @@ import NewNavbar from './ui/NewNavBar';
 export default function App({ recipeList,favouriteList, user, recipeCard }) {
   return (
     <>
-      <NewNavbar/>
-      <Navbar user = {user }/>
+      <NewNavbar user = {user}/>
+
       <Routes>
         <Route path="/" element={<HomePage recipeList={recipeList} user={user} />} />
         <Route path="/signup" element={<SignUpPage />} />

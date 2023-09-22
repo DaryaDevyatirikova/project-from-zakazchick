@@ -4,6 +4,7 @@ import SortRecipe from '../ui/SortRecipe';
 import SortDESC from '../ui/icons/SortDESC';
 import SortABS from '../ui/icons/SortABS';
 import RecipeCard from '../ui/RecipeCard';
+import NewCard from '../ui/newCard';
 
 export default function HomePage({user}) {
   const [recipeList, setRecipeList] = useState(null);
@@ -51,11 +52,14 @@ export default function HomePage({user}) {
           </button>
         </div>
       </div>
-      <div className="Allrecipes">
-        {recipeList?.map((card) => (
-          <RecipeCard card={card} user={user} />
-        ))}
+
+      <div className='Allrecipes'>
+      {recipeList?.map((card) => (
+        <NewCard key={card.id} card={card} />
+
+      ))}
       </div>
+
     </>
   );
 }
