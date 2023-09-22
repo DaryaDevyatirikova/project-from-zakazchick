@@ -44,7 +44,9 @@ export default function RecipePage({recipe}) {
           </Typography>
           <br />
           <Typography variant="body2" color="text.secondary">
-          Ингредиенты:
+         <ul>{`Ингредиенты: ${recipe?.dataValues?.Ingredients?.map(ing=>(
+          <li>{ing.ingredientname}</li>
+         ))}`}</ul> 
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -54,7 +56,7 @@ export default function RecipePage({recipe}) {
         }}
       >
         <Button size="small" color="primary">
-          <FavoriteBorderIcon />
+          {/* <FavoriteBorderIcon /> */}
         </Button>
       </CardActions>
     </Card>
