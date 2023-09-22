@@ -28,7 +28,7 @@
 
 .Allrecipes {
   display: flex;
-
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -301,3 +301,16 @@ margin-left: 25px;
 margin-right: 4px;
 }
 
+.secback{
+  background-color: rgb(255, 196, 196);
+  /* background-image: url('cooking.png');
+  background-repeat: repeat;
+  background-size: 70px 70px; */
+}
+.favlist{
+  display: flex;
+  justify-content: center;
+}
+.sortbtn{
+  margin-left: 120px;
+}

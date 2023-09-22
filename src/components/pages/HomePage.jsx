@@ -43,29 +43,26 @@ export default function HomePage({ user, ingredients }) {
         запоминаться на всю жизнь. Присоединяйтесь к нам и давайте вместе покорять мир вкуса!
       </div>
       <div className="hstack gap-3">
-        <div className="p-2">
-          Сортировка по:
-          <SortRecipe sortHandler={sortHandler} />
-        </div>
-        <div className="p-2 ms-auto">
+        <div className="p-2 sortbtn">
+          <p><SortRecipe sortHandler={sortHandler} /></p>
           <button type="button">
             <SortABS clickHandler={clickHandler} />
           </button>
-        </div>
-        <div className="vr" />
-        <div className="p-2">
           <button type="button">
             <SortDESC clickHandler={clickHandler} />
-          </button>
+          </button> 
         </div>
+ 
       </div>
-
-      <div className='Allrecipes'>
+<div className='secback'>
+<div className='Allrecipes'>
       {recipeList?.map((card) => (
         <NewCard key={card.id} card={card} />
 
       ))}
       </div>
+</div>
+    
 
     </>
   );

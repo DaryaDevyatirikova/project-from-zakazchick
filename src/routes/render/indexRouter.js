@@ -71,7 +71,8 @@ router.get('/favourite', authCheck(true), async (req, res) => {
 });
 
 router.get('/rec/:recipeId', async (req, res) => {
-  const recipeCard = await Recipe.findByPk(req.params.recipeId);
+  const recipeCard = await Recipe.findOne({where:{id:req.params.recipeId},include:Ingredient});
+
   const initState = { recipeCard };
   res.render('Layout', initState);
 
