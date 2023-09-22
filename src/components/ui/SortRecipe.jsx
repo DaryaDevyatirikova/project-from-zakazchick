@@ -1,28 +1,12 @@
 import React from 'react';
+import { Form } from 'react-bootstrap';
 
-export default function SortRecipe() {
+export default function SortRecipe({ sortHandler }) {
   return (
-    <div className="dropdown">
-      <button
-        className="btn btn-secondary dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Выбрать категорию
-      </button>
-      <ul className="dropdown-menu">
-        <li>
-          <a className="dropdown-item" href="#">
-            Количеству ингредиентов
-          </a>
-        </li>
-        <li>
-          <a className="dropdown-item" href="#">
-            Времени готовки
-          </a>
-        </li>
-      </ul>
-    </div>
+    <Form.Select onClick={sortHandler} aria-label="Default select example">
+      <option>Категория</option>
+      <option value="1">По времени</option>
+      <option value="2">По количеству ингредиентов</option>
+    </Form.Select>
   );
 }

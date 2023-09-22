@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import SortRecipe from '../ui/SortRecipe';
 import SortABS from '../ui/icons/SortABS';
 import SortDESC from '../ui/icons/SortDESC';
-import RecipeCard from '../ui/RecipeCard';
+import FavRecipe from '../ui/FavRecipe';
 
-export default function FavouritePage({ favouriteList }) {
+export default function FavouritePage() {
+  const [favouriteList, setFavouriteList] = useState(null);
+  const [deleted, setDeleted] = useState(false);
+  useEffect(()=>{
+    axios('/api/favourite').then(({ data }) => setFavouriteList(data));
+  },[deleted])
+
   return (
     <>
       <div className="hstack gap-3">
@@ -25,7 +32,7 @@ export default function FavouritePage({ favouriteList }) {
         </div>
       </div>
       {favouriteList?.map((card) => (
-        <RecipeCard card={card?.Recipe} />
+        <FavRecipe card={card?.Recipe} setFavouriteList={setFavouriteList} setDeleted={setDeleted}/>
       ))}
     </>
   );

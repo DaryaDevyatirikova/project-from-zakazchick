@@ -55,8 +55,10 @@ router.get('/favourite', authCheck(true), async (req, res) => {
   });
   const favouriteList = await JSON.parse(JSON.stringify(data));
   const initState = { favouriteList };
+  
   console.log('-----------', favouriteList);
   res.render('Layout', initState);
+
 //   try {
 //     const data = await Favourite.findAll({
 //       where: { userId: req.session?.user.id },
