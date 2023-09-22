@@ -1,5 +1,4 @@
 import express from 'express';
-import axios from 'axios';
 import authCheck from '../../middlewares/authCheck';
 import { Recipe, Favourite, User } from '../../../db/models';
 
@@ -55,7 +54,6 @@ router.get('/favourite', authCheck(true), async (req, res) => {
   });
   const favouriteList = await JSON.parse(JSON.stringify(data));
   const initState = { favouriteList };
-  console.log('-----------', favouriteList);
   res.render('Layout', initState);
 
 //   try {
