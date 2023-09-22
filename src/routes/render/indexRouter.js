@@ -1,5 +1,4 @@
 import express from 'express';
-import axios from 'axios';
 import authCheck from '../../middlewares/authCheck';
 import { Recipe, Favourite, User } from '../../../db/models';
 
