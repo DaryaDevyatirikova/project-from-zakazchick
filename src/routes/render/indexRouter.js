@@ -1,6 +1,6 @@
 import express from 'express';
 import authCheck from '../../middlewares/authCheck';
-import { Recipe, Favourite, User } from '../../../db/models';
+import { Recipe, Favourite, User,Ingredient } from '../../../db/models';
 
 const router = express.Router();
 
@@ -21,8 +21,9 @@ router.get('/', async (req, res) => {
       as: 'fav',
     },
   });
+  const ingredients = await Ingredient.findAll()
 
-  const initState = { recipeList };
+  const initState = { recipeList, ingredients};
   res.render('Layout', initState);
 
 //   try {
