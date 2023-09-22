@@ -1,64 +1,36 @@
-.header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width :100vw;
-    height: 480px;
-    background-image: url('dish.png');
-  background-repeat: repeat;
-  background-size: 70px 70px; 
-}
-.title{
- display: flex;
- justify-content: center;
- align-items: center;
-color: aliceblue;
-font-family: 'IBM Plex Mono', monospace;
-font-family: 'Oswald', sans-serif;
-font-size: 200px
-}
-
-.description{
-   color: aliceblue;
-   font-family: 'IBM Plex Mono', monospace;
-   font-family: 'Oswald', sans-serif;
-   font-size: 50px;
-   margin: 120px;
-}
-
-.Allrecipes{
+.header {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 480px;
+  background-image: url('dish.png');
+  background-repeat: repeat;
+  background-size: 70px 70px;
 }
-
-/* .card{
-  width: 400px;
-height: 250px;
-margin: 20px;
-display: flex;
-justify-content: center;
-border-radius: 48px;
-background-color: #4BDB5E;
-border-color: black;
-}
-
-.card-body{
+.title {
   display: flex;
-  flex-direction: column;
-justify-content: center;
-background-color: #DB4B71;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Oswald', sans-serif;
+  font-size: 200px;
 }
 
-.foodimg{
-  border-radius: 48px;
-  background-color: #DB4B71;
-} */
+.description {
+  color: aliceblue;
+  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Oswald', sans-serif;
+  font-size: 50px;
+  margin: 120px;
+}
 
+.Allrecipes {
+  display: flex;
 
-/* .like{
-  padding-left: 15px;
-} */
-
+  justify-content: center;
+}
 
 
 article {
@@ -328,3 +300,4 @@ margin-left: 25px;
 .social i{
 margin-right: 4px;
 }
+
