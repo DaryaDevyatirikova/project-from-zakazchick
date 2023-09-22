@@ -1,5 +1,4 @@
 import express from 'express';
-import axios from 'axios';
 import authCheck from '../../middlewares/authCheck';
 import { Recipe, Favourite, User } from '../../../db/models';
 
@@ -50,13 +49,11 @@ router.get('/login', authCheck(false), (req, res) => res.render('Layout'));
 router.get('/favourite', authCheck(true), async (req, res) => {
 
   const data = await Favourite.findAll({
-    where: { userId: req.session.user.id },
+    where: { userId: req.session?.user.id },
     include: Recipe,
   });
   const favouriteList = await JSON.parse(JSON.stringify(data));
   const initState = { favouriteList };
-  
-  console.log('-----------', favouriteList);
   res.render('Layout', initState);
 
 //   try {
