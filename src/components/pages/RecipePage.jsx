@@ -8,6 +8,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { grey } from '@mui/material/colors';
 
 export default function RecipePage({recipe}) {
+  console.log(recipe);
   return (
     <Card sx={{
       maxWidth: 1000,
@@ -43,7 +44,7 @@ export default function RecipePage({recipe}) {
           </Typography>
           <br />
           <Typography variant="body2" color="text.secondary">
-            Ингридиенты
+          Ингредиенты:
           </Typography>
         </CardContent>
       </CardActionArea>

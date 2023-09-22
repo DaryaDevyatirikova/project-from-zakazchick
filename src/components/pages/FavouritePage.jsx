@@ -31,9 +31,11 @@ export default function FavouritePage() {
           </button>
         </div>
       </div>
+      <div className='favlist'>
       {favouriteList?.map((card) => (
         <FavRecipe card={card?.Recipe} setFavouriteList={setFavouriteList} setDeleted={setDeleted}/>
       ))}
+      </div>
     </>
   );
 }
