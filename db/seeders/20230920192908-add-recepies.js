@@ -10,12 +10,7 @@ module.exports = {
           description: 'Можно купить в магазине и будет вкусно',
           time: '2 секунды',
         },
-        {
-          recipename: 'НеЗапеканка',
-          image: 'https://karamellka.ru/wp-content/uploads/2017/10/tvorozhnaya-zapekanka-foto.jpg',
-          description: 'Можно купить в магазине и будет вкусно',
-          time: '2 секунды',
-        },
+
         {
           recipename: 'Борщ',
           image: 'https://2recepta.com/recept/borshh/borshh.jpg',
@@ -96,6 +91,18 @@ module.exports = {
           image:
             'https://n1s1.hsmedia.ru/8b/8a/7a/8b8a7abdac88b90ef559d6ac3446be8b/1000x745_0xac120003_9272639891562646659.jpg',
           description: 'Швейцарское блюдо из расплавленного сыра, в который макают кусочки хлеба',
+          time: '30 минут',
+        },
+        {
+          recipename: 'Шоколадный торт',
+          image: 'https://aif-s3.aif.ru/images/009/987/002d5e930aab5f9ba840f374a3e142aa.jpg',
+          description: 'Вкусный и сытный десерт для любителей шоколада',
+          time: '2 часа',
+        },
+        {
+          recipename: 'Салат Цезарь',
+          image: 'https://ferma-m2.ru/images/shop/recipe_image/crop_shutterstock_1505620307.jpg',
+          description: 'Популярный салат с курицей, сыром пармезан и специальным соусом',
           time: '30 минут',
         },
       ],
