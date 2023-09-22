@@ -7,7 +7,7 @@ export default function Like({ cardId, card}) {
   const clickHandler = async () => {
    await axios.post(`/api/${cardId}`);
     setLiked((prev) => !prev);
-    console.log(liked);
+    
   };
   return (
     <svg

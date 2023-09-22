@@ -8,13 +8,13 @@ module.exports = {
           recipename: 'Запеканка',
           image: 'https://karamellka.ru/wp-content/uploads/2017/10/tvorozhnaya-zapekanka-foto.jpg',
           description: 'Можно купить в магазине и будет вкусно',
-          time: '2 секунды',
+          time: 2,
         },
         {
           recipename: 'НеЗапеканка',
           image: 'https://karamellka.ru/wp-content/uploads/2017/10/tvorozhnaya-zapekanka-foto.jpg',
           description: 'Можно купить в магазине и будет вкусно',
-          time: '2 секунды',
+          time: 3,
         },
       ],
       {},
@@ -22,11 +22,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    await queryInterface.bulkDelete('Recipes', null, {});
   },
 };
