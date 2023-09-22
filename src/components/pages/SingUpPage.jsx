@@ -28,7 +28,8 @@ export default function SignUpPage() {
   };
 
   return (
-    <Form onSubmit={submitHandler}>
+    <>
+    {/* <Form onSubmit={submitHandler}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control
@@ -87,6 +88,48 @@ export default function SignUpPage() {
           <Nav.Link href="/login"> Already have an account? Sign in</Nav.Link>
         </Col>
       </Row>
-    </Form>
+    </Form> */}
+
+
+<div className="background">
+<div className="shape" />
+<div className="shape" />
+</div>
+<form className="form" onSubmit={submitHandler}>
+<h3 className="formh3">Sign up</h3>
+
+<label className="formtext lbl" >Email</label>
+<input className="formtext forminput inp" value={formData.email}
+          onChange={changeHandler}
+          type="email"
+          name="email"
+          placeholder="Enter email" />
+          <label className="formtext lbl" >Username</label>
+<input className="formtext forminput inp" 
+  value={formData.username}
+  onChange={changeHandler}
+  type="text"
+  name="username"
+  placeholder="Enter your name"/>
+{/** inputs: name="", на бэке актуализировать проверку данных с формы */}
+   <label className="formtext"  type="password"  placeholder="Password">Password</label>
+<input className="formtext forminput inp"      
+     value={formData.password}
+          onChange={changeHandler}
+          type="password"
+          name="password"
+          placeholder="Password" />
+          
+   <label className="formtext"  type="password"  placeholder="Password">Repeat password</label>
+<input className="formtext forminput inp"      
+    value={formData.repeat}
+    onChange={changeHandler}
+    type="password"
+    name="repeat"
+    placeholder="Repeat password"/>
+
+<button type='submit' className="btn">Log In</button>
+</form>
+</>
   );
 }

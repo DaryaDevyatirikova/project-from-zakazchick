@@ -4,6 +4,7 @@ import SortRecipe from '../ui/SortRecipe';
 import SortDESC from '../ui/icons/SortDESC';
 import SortABS from '../ui/icons/SortABS';
 import RecipeCard from '../ui/RecipeCard';
+import NewCard from '../ui/newCard';
 
 export default function HomePage() {
   const [recipeList, setRecipeList] = useState(null);
@@ -41,9 +42,12 @@ export default function HomePage() {
       </div>
       <div className='Allrecipes'>
       {recipeList?.map((card) => (
-        <RecipeCard card={card} />
+        <NewCard key={card.id} card={card} />
+        // <RecipeCard card={card} />
       ))}
       </div>
+        {/* <NewCard card={card} /> */}
+
 
     </>
   );

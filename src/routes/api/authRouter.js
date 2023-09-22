@@ -26,22 +26,27 @@ authRouter.post('/signup', async (req, res) => {
 });
 
 authRouter.post('/login', async (req, res) => {
+  console.log(req.body)
   try {
     const { email, password } = req.body;
     if (!email || !password) {
+      console.log('ты пцпа');
       return res.status(400).json({ message: 'Missing email or password' });
     }
     const user = await User.findOne({ where: { email } });
     if (!user) {
+      console.log('ты апаппа');
       return res.status(400).json({ message: 'Email not found' });
     }
     const isCorrect = await bcrypt.compare(password, user.hashpass);
     if (!isCorrect) {
+      console.log('тнеи');
       return res.status(400).json({ message: 'Incorrect password' });
     }
     req.session.user = { ...user.get(), hashpass: undefined };
     res.sendStatus(200);
   } catch (err) {
+    console.log('вавава');
     return res.status(500).json({ message: 'Server error' });
   }
 });
