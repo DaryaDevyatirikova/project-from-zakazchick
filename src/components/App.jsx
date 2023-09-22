@@ -15,11 +15,11 @@ export default function App({ recipeList,favouriteList, user, recipeCard }) {
       <NewNavbar/>
       <Navbar user = {user }/>
       <Routes>
-        <Route path="/" element={<HomePage recipeList={recipeList} />} />
+        <Route path="/" element={<HomePage recipeList={recipeList} user={user} />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/rec/:recipeId" element={<RecipePage  recipe={recipeCard} />} />
-        <Route path="/favourite" element={<FavouritePage favouriteList={favouriteList} />} />
+        <Route path="/favourite" element={<FavouritePage favouriteList={favouriteList} user={user} />} />
       </Routes>
     </>
   );
