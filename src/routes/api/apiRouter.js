@@ -1,5 +1,6 @@
 import express from 'express';
-import { Favourite, Recipe, User } from '../../../db/models';
+import { Favourite, Recipe, User, Ingredient } from '../../../db/models';
+import { where } from 'sequelize';
 
 const router = express.Router();
 
@@ -50,4 +51,14 @@ router.get('/favourite', async (req, res) => {
 
   res.json(favouriteList);
 });
+
+router.get('/count/:id', async (req, res) => {
+
+  const recipe = await Ingredient.findAll({where: {
+    recipeId: req.params.id
+  }})
+  const counter = recipe.reduce((acc, el) => acc + 1, 0);
+
+  res.json(counter);
+})
 export default router;

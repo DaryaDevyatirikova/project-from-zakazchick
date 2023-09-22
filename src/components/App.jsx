@@ -10,17 +10,17 @@ import NewNavbar from './ui/NewNavBar';
 
 
 
-export default function App({ recipeList,favouriteList, user, recipeCard }) {
+export default function App({ recipeList,favouriteList, user, recipeCard,ingredients }) {
   return (
     <>
       <NewNavbar user = {user}/>
 
       <Routes>
-        <Route path="/" element={<HomePage recipeList={recipeList} user={user} />} />
+        <Route path="/" element={<HomePage recipeList={recipeList} user={user} ingredients={ingredients}/>} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/rec/:recipeId" element={<RecipePage  recipe={recipeCard} />} />
-        <Route path="/favourite" element={<FavouritePage favouriteList={favouriteList} user={user} />} />
+        <Route path="/favourite" element={<FavouritePage favouriteList={favouriteList} user={user} ingredients={ingredients} />} />
       </Routes>
     </>
   );
